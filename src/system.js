@@ -49,9 +49,16 @@ class System {
                 dummy.position.copy(p);
                 dummy.updateMatrix();
                 this.instancedMesh.setMatrixAt(m.id, dummy.matrix);
+
+                let color = m.getColor();
+                if (color === undefined) {
+                    color = strandColors[THREE.MathUtils.euclideanModulo(
+                        strand.id, strandColorsLen
+                    )];
+                }
                 this.instancedMesh.setColorAt(
                     m.id,
-                    strandColors[strand.id % strandColorsLen]
+                    color
                 );
             }
         }
@@ -95,6 +102,10 @@ class Monomer {
     _calcBackbonePos() {
         throw "Abstract method _calcBackbonePos() not implemented";
     }
+
+    getColor() {
+        return undefined;
+    }
 }
 
 class DNAMonomer extends Monomer {
@@ -135,6 +146,24 @@ class AminoAcidMonomer extends Monomer {
 
     getCategory() {
         return "AA";
+    }
+
+    getColor() {
+        let color;
+        if (["F", "W", "Y"].includes(this.type)) {
+            color = new THREE.Color(0xffff74);
+        } else if (["D", "E"].includes(this.type)) {
+            color = new THREE.Color(0xff6d6d);
+        } else if (["R", "H", "K"].includes(this.type)) {
+            color = new THREE.Color(0x85ade1);
+        } else if (["A", "G", "I", "L", "M", "P", "V"].includes(this.type)) {
+            color = new THREE.Color(0xf2be3c);
+        } else if (["C", "N", "Q", "S", "T"].includes(this.type)) {
+            color = new THREE.Color(0xf2be3c);
+        } else {
+            throw `Unknown type:  ${this.type}!`;
+        }
+        return color;
     }
 }
 
