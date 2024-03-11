@@ -305,19 +305,9 @@ const init = () => {
             this.counter = 0;
 
             this.designs = [
-                //"6-bar.oxview",
-                //"hairygami.oxview",
-                //"hairpin.oxview",
-                //"Leaf.oxview",
                 "monohole_1b.oxview",
-                //"moon.oxview",
-                //"meta.oxview",
-                //"gated-channel.oxview",
-                //"gripper.oxview",
-                //"teather.oxview",
-                //"planeV3.oxview",
-                //"1eua.oxview",
-                "rna_crossover.oxview"
+                "lysozyme.oxview",
+                //"rna_crossover.oxview"
             ].map(p => "resources/" + p);
         }
         getNext() {
