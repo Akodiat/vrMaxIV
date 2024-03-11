@@ -1,5 +1,5 @@
 # oxJenga
-Interactive augmented reality simulation of DNA nanostructures. Forked from https://github.com/zoombya/oxJenga/ by Dr. Michael Matthies.
+Interactive augmented reality simulation of DNA nanostructures. Forked from https://github.com/zoombya/oxJenga/ by Dr. Michael Matthies and https://github.com/Akodiat/oxJenga.
 
 Try it out now at https://akodiat.github.io/oxJenga. If you have an AR/VR headset, open this URL in the internal web browser and click "START XR".
 
