@@ -306,7 +306,8 @@ const init = () => {
 
             this.designs = [
                 "monohole_1b.oxview",
-                "lysozyme.oxview",
+                "2vxn.oxview",
+                //"lysozyme.oxview",
                 //"rna_crossover.oxview"
             ].map(p => "resources/" + p);
         }
